@@ -142,10 +142,10 @@ public class StepDetailsActivity extends AppCompatActivity {
                 String videoURL = recipeHolder.getSteps().get(position-1).getVideoURL();
                 fullScreenMode(videoURL);
                 fragment.setStep(recipeHolder.getSteps().get(position - 1));
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.inner_step_container, fragment, Config.INNER_DETAILS_TAG)
-                        .commit();
             }
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.inner_step_container, fragment, Config.INNER_DETAILS_TAG)
+                    .commit();
         }
     }
     /**
