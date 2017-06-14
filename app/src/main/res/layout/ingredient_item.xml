@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/text_margin">
+    <RelativeLayout
+        android:layout_width="75dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_body"
+            android:layout_marginEnd="2dp"
+            android:textStyle="bold"
+            tools:text="500"/>
+        <TextView
+            android:id="@+id/measure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_body"
+            android:layout_marginEnd="10dp"
+            android:textStyle="bold"
+            android:layout_toEndOf="@+id/quantity"
+            tools:text="G"/>
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/ingredient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_body"
+        android:layout_marginEnd="5dp"
+        tools:text="Mascapone Cheese (room temperature) shehab salah el mohamed ali"/>
+
+</LinearLayout>

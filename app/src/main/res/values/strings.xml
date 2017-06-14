@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Baking App</string>
+    <string name="Loading_message">Please Wait …</string>
+    <string name="no_internet">There is no internet connection!</string>
+    <string name="no_data">There is no recipes available right now.</string>
+    <string name="first_details_item_name">Recipe Ingredients</string>
+    <string name="next_button">NEXT</string>
+    <string name="previous_button">PREVIOUS</string>
+    <string name="unknown_error">Unknown Error has happen! Please try again later.</string>
+    <string name="ingredients_title">Ingredients</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+</resources>

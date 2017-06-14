@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <GridView
+        android:id="@+id/recipe_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnWidth="@dimen/grid_item_width"
+        android:verticalSpacing="@dimen/no_margin"
+        android:horizontalSpacing="@dimen/no_margin"
+        android:stretchMode="columnWidth"
+        android:numColumns="auto_fit"
+        android:choiceMode="singleChoice"/>
+</LinearLayout>
