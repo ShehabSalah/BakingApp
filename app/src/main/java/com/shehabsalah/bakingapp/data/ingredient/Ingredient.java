@@ -1,4 +1,4 @@
-package com.shehabsalah.bakingapp.data;
+package com.shehabsalah.bakingapp.data.ingredient;
 
 import android.os.Parcel;
 import android.os.Parcelable;

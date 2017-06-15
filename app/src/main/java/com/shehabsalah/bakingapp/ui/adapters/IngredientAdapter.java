@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.shehabsalah.bakingapp.R;
-import com.shehabsalah.bakingapp.data.Ingredient;
+import com.shehabsalah.bakingapp.data.ingredient.Ingredient;
 
 import java.util.ArrayList;
 

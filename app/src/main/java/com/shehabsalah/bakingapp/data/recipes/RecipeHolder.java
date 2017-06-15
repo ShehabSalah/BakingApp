@@ -1,7 +1,10 @@
-package com.shehabsalah.bakingapp.data;
+package com.shehabsalah.bakingapp.data.recipes;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import com.shehabsalah.bakingapp.data.ingredient.Ingredient;
+import com.shehabsalah.bakingapp.data.Step;
 
 import java.util.ArrayList;
 

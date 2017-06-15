@@ -9,7 +9,7 @@ import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.shehabsalah.bakingapp.R;
-import com.shehabsalah.bakingapp.data.RecipeHolder;
+import com.shehabsalah.bakingapp.data.recipes.RecipeHolder;
 import com.shehabsalah.bakingapp.ui.fragments.StepFragment;
 import com.shehabsalah.bakingapp.util.Config;
 
@@ -59,7 +59,7 @@ public class StepDetailsActivity extends AppCompatActivity {
             if (getFragmentManager().findFragmentByTag(Config.INNER_DETAILS_TAG) != null)
                 getFragmentManager().findFragmentByTag(Config.INNER_DETAILS_TAG).getRetainInstance();
             // Get the video url
-            String videoURL = recipeHolder.getSteps().get(currentPosition-1).getVideoURL();
+            String videoURL = currentPosition==0?null:recipeHolder.getSteps().get(currentPosition-1).getVideoURL();
             setContentView(R.layout.activity_step_details);
             // Initialize video full screen
             fullScreenMode(videoURL);

@@ -10,7 +10,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.shehabsalah.bakingapp.R;
-import com.shehabsalah.bakingapp.data.RecipeHolder;
+import com.shehabsalah.bakingapp.data.recipes.RecipeHolder;
 import com.shehabsalah.bakingapp.util.Config;
 
 import butterknife.BindView;

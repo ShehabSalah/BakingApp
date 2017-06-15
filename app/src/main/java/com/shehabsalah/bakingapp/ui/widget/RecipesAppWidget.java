@@ -27,18 +27,17 @@ public class RecipesAppWidget extends AppWidgetProvider {
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                 int appWidgetId) {
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_grid_view);
-        // Set the GridWidgetService intent to act as the adapter for the GridView
-        Intent intent = new Intent(context, GridWidgetService.class);
-        views.setRemoteAdapter(R.id.widget_grid_view, intent);
-
+        // Set the ListWidgetService intent to act as the adapter for the GridView
+        Intent intent = new Intent(context, ListWidgetService.class);
+        views.setRemoteAdapter(R.id.widget_list_view, intent);
 
         // Set the MainActivity intent to launch when clicked
         Intent appIntent = new Intent(context, MainActivity.class);
         PendingIntent appPendingIntent = PendingIntent.getActivity(context, 0, appIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-        views.setPendingIntentTemplate(R.id.widget_grid_view, appPendingIntent);
+        views.setPendingIntentTemplate(R.id.widget_list_view, appPendingIntent);
 
         // Handle empty gardens
-        views.setEmptyView(R.id.widget_grid_view, R.id.empty_view);
+        views.setEmptyView(R.id.widget_list_view, R.id.empty_view);
         appWidgetManager.updateAppWidget(appWidgetId, views);
     }
 
@@ -68,7 +67,6 @@ public class RecipesAppWidget extends AppWidgetProvider {
             GetInfoAsyncTask getInfoAsyncTask = new GetInfoAsyncTask() {
                 @Override
                 protected void onPreExecute() {
-
                 }
 
                 @Override

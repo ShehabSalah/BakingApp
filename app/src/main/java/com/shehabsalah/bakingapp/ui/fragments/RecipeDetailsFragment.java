@@ -16,7 +16,7 @@ import android.view.ViewGroup;
 import android.widget.GridView;
 
 import com.shehabsalah.bakingapp.R;
-import com.shehabsalah.bakingapp.data.RecipeHolder;
+import com.shehabsalah.bakingapp.data.recipes.RecipeHolder;
 import com.shehabsalah.bakingapp.ui.adapters.RecipeStepsAdapter;
 import com.shehabsalah.bakingapp.util.Config;
 

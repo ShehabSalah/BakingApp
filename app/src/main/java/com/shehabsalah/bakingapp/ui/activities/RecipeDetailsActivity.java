@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.shehabsalah.bakingapp.R;
-import com.shehabsalah.bakingapp.data.RecipeHolder;
+import com.shehabsalah.bakingapp.data.recipes.RecipeHolder;
 import com.shehabsalah.bakingapp.ui.fragments.RecipeDetailsFragment;
 import com.shehabsalah.bakingapp.ui.fragments.StepFragment;
 import com.shehabsalah.bakingapp.util.Config;

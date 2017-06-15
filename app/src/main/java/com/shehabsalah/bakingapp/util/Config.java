@@ -2,6 +2,7 @@ package com.shehabsalah.bakingapp.util;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
+import android.net.Uri;
 import android.os.Parcelable;
 
 /**
@@ -47,6 +48,10 @@ public class Config {
     public static final String P_LIST_KEY               = "p_key";
     public static final String WIDGET_INTENT            = "widget_intent";
     public static final String WIDGET_GET_IN            = "getIngredient";
+
+    //Providers
+    public static final String AUTHORITY            = "com.shehabsalah.bakingapp";
+    public static final Uri CONTENT_URI_BASE        = Uri.parse("content://" + AUTHORITY);
 
     //Check internet connection
     public static boolean isNetworkConnected(Context context) {

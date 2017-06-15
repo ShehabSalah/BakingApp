@@ -3,6 +3,7 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="small_margin">10dp</dimen>
+    <dimen name="xsmall_margin">8dp</dimen>
     <dimen name="no_margin">0dp</dimen>
 
     <!--Font sizes-->

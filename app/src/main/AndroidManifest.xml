@@ -21,7 +21,7 @@
                 android:resource="@xml/recipes_app_widget_info" />
         </receiver>
         <service
-            android:name=".ui.widget.GridWidgetService"
+            android:name=".ui.widget.ListWidgetService"
             android:permission="android.permission.BIND_REMOTEVIEWS" />
 
         <activity
@@ -48,6 +48,11 @@
                 <action android:name="android.intent.action.MEDIA_BUTTON"/>
             </intent-filter>
         </receiver>
+        <provider
+            android:name=".data.RecipeProvider"
+            android:authorities="@string/content_authority"
+            android:exported="true"
+            android:syncable="true" />
     </application>
 
 </manifest>

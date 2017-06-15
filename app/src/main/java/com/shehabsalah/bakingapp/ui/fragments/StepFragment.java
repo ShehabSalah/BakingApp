@@ -18,6 +18,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.exoplayer2.C;
@@ -42,11 +43,12 @@ import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter;
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
 import com.google.android.exoplayer2.util.Util;
 import com.shehabsalah.bakingapp.R;
-import com.shehabsalah.bakingapp.data.Ingredient;
+import com.shehabsalah.bakingapp.data.ingredient.Ingredient;
 import com.shehabsalah.bakingapp.data.Step;
 import com.shehabsalah.bakingapp.ui.adapters.IngredientAdapter;
 import com.shehabsalah.bakingapp.util.Config;
 import com.shehabsalah.bakingapp.util.ExoPlayer.AdaptiveTrackSelection;
+import com.squareup.picasso.Picasso;
 
 import java.net.CookieManager;
 import java.net.CookiePolicy;
@@ -86,6 +88,7 @@ public class StepFragment extends Fragment implements ExoPlayer.EventListener{
     @BindView(R.id.description) TextView description;
     @BindView(R.id.ingredients_holder_layout) CardView ingredients_holder_layout;
     @BindView(R.id.ingredients_list) RecyclerView ingredients_list;
+    @BindView(R.id.videoThumbnail) ImageView videoThumbnail;
 
 
     public StepFragment() {
@@ -129,6 +132,16 @@ public class StepFragment extends Fragment implements ExoPlayer.EventListener{
 
         // If step has video display the video
         if (step.getVideoURL()!=null && !step.getVideoURL().isEmpty()){
+            if (step.getThumbnailURL()!=null && !step.getThumbnailURL().isEmpty()){
+                videoThumbnail.setVisibility(View.VISIBLE);
+                Picasso.with(getActivity())
+                        .load(step.getThumbnailURL())
+                        .error(R.mipmap.holder)
+                        .placeholder(R.mipmap.holder)
+                        .into(videoThumbnail);
+            }
+
+
             // Show the video layout
             video_holder_layout.setVisibility(View.VISIBLE);
             // Initialize the Media Session.
@@ -215,6 +228,8 @@ public class StepFragment extends Fragment implements ExoPlayer.EventListener{
             }
             mExoPlayer.prepare(mediaSource);
             mExoPlayer.setPlayWhenReady(true);
+            videoThumbnail.setVisibility(View.GONE);
+
         }
     }
 
@@ -231,12 +246,13 @@ public class StepFragment extends Fragment implements ExoPlayer.EventListener{
         resumeWindow = C.INDEX_UNSET;
         resumePosition = C.TIME_UNSET;
     }
+
     /**
-     * Release the player when the activity is destroyed.
+     * Release the player.
      */
     @Override
-    public void onDestroy() {
-        super.onDestroy();
+    public void onStop() {
+        super.onStop();
         releasePlayer();
         if (mMediaSession!=null){
             mMediaSession.setActive(false);

@@ -17,7 +17,7 @@ import com.shehabsalah.bakingapp.R;
 import com.shehabsalah.bakingapp.api.GET_Connector;
 import com.shehabsalah.bakingapp.api.UriBuilder;
 import com.shehabsalah.bakingapp.api.parser.ParseJsonItems;
-import com.shehabsalah.bakingapp.data.RecipeHolder;
+import com.shehabsalah.bakingapp.data.recipes.RecipeHolder;
 import com.shehabsalah.bakingapp.ui.activities.RecipeDetailsActivity;
 import com.shehabsalah.bakingapp.ui.adapters.RecipeListAdapter;
 import com.shehabsalah.bakingapp.util.Config;

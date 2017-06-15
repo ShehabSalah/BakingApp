@@ -23,6 +23,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:minHeight="350dp"/>
+        <ImageView
+            android:id="@+id/videoThumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/holder"
+            android:contentDescription="@string/video_thumbnail"/>
     </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView
