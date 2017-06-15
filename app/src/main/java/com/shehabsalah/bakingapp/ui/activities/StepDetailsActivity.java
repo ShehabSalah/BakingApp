@@ -65,6 +65,8 @@ public class StepDetailsActivity extends AppCompatActivity {
             fullScreenMode(videoURL);
             // Initialize next button and previous button
             ButterKnife.bind(this);
+            // Handle the next and previous navigation
+            nav_controller(currentPosition, recipeHolder.getSteps().size());
         }
 
         // On next button click move to next step

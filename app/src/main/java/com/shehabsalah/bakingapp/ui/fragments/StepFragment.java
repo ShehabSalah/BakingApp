@@ -113,13 +113,17 @@ public class StepFragment extends Fragment implements ExoPlayer.EventListener{
                     ingredients = b.getParcelableArrayList(Config.INGR_STATE);
             }
         }
+        return mainView;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
         if (step!=null){
             displayStep();
         }else if(ingredients!=null){
             displayIngredients();
         }
-
-        return mainView;
     }
 
     private void displayStep(){
@@ -282,14 +286,16 @@ public class StepFragment extends Fragment implements ExoPlayer.EventListener{
      */
     @Override
     public void onPlayerStateChanged(boolean playWhenReady, int playbackState) {
-        if((playbackState == ExoPlayer.STATE_READY) && playWhenReady){
-            mStateBuilder.setState(PlaybackStateCompat.STATE_PLAYING,
-                    mExoPlayer.getCurrentPosition(), 1f);
-        } else if((playbackState == ExoPlayer.STATE_READY)){
-            mStateBuilder.setState(PlaybackStateCompat.STATE_PAUSED,
-                    mExoPlayer.getCurrentPosition(), 1f);
+        if (mExoPlayer!=null){
+            if((playbackState == ExoPlayer.STATE_READY) && playWhenReady){
+                mStateBuilder.setState(PlaybackStateCompat.STATE_PLAYING,
+                        mExoPlayer.getCurrentPosition(), 1f);
+            } else if((playbackState == ExoPlayer.STATE_READY)){
+                mStateBuilder.setState(PlaybackStateCompat.STATE_PAUSED,
+                        mExoPlayer.getCurrentPosition(), 1f);
+            }
+            mMediaSession.setPlaybackState(mStateBuilder.build());
         }
-        mMediaSession.setPlaybackState(mStateBuilder.build());
     }
     /**
      * Release ExoPlayer.
