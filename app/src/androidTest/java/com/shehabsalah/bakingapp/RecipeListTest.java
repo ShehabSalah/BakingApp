@@ -74,7 +74,6 @@ public class RecipeListTest {
         onView((withId(R.id.shortDescribe))).check(matches(withText("Recipe Introduction")));
     }
 
-
     // Remember to unregister resources when not needed to avoid malfunction.
     @After
     public void unregisterIdlingResource() {
@@ -82,4 +81,5 @@ public class RecipeListTest {
             Espresso.unregisterIdlingResources(mIdlingResource);
         }
     }
+
 }
